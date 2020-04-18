@@ -39,7 +39,14 @@ def main():
             prediction = decide([choice1, choice2], model, tokenizer)
         st.write(answer(prediction).format(choice1=choice1, choice2=choice2))
         st.text("Prediction: " + str(prediction[0]))
-
+    
+    
+    st.subheader('About the name')
+    st.write("The name Pierre Corneille Bot comes from French tragedian Pierre Corneille, renowned for his dilemma referred to as \"cornellian\" in which his characters are forced to choose from two options, each having a detrimental effect.")
+    st.subheader('About the system')
+    st.write("Pierre Corneille Bot uses a quite simple neural network trained on top of an embedding layer frozen to GLoVe word embeddings. The training dataset was scraped from http://either.io/. The neural network had to predict the ratio of people choosing one option over the other from the data of the website.")
+    st.subheader('About the author')
+    st.write("I am Adam Oudad. You can check my github repository at https://github.com/adamoudad and read my blog at https://adamoudad.github.io/")
         # # st.radio(, ["Yes", "No"], index=-1)
         # if not(feedback):
         #     st.write("Do you agree with me?")
