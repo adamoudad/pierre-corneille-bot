@@ -6,7 +6,7 @@ import time
 import keras.backend.tensorflow_backend as tb
 tb._SYMBOLIC_SCOPE.value = True
 
-model, tokenizer = load_model("./eitherio_2")
+model, tokenizer = load_model("./eitherio")
 
 def answer(prediction):
     if prediction > 0.8:
