@@ -26,7 +26,7 @@ def main():
     # feedback = False
 
     st.title('Hi, I am Pierre Corneille Bot.')
-    st.image("pierre_corneille_bot.jpg", width=150)
+    st.image("pierre_corneille_bot.png", width=150)
     st.write('Let me help you decide on things. You can write two options below, I will decide on one.')
 
     choice1 = st.text_input("Rather...")
