@@ -4,14 +4,14 @@ import sys
 import csv
 import pickle as pkl
 import numpy as np
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.utils import to_categorical
-from keras.layers import Dense, Input, GlobalMaxPooling1D
-from keras.layers import Conv1D, MaxPooling1D, Embedding, Concatenate
-from keras.models import Model, Sequential
-import keras
-from keras.initializers import Constant
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.layers import Dense, Input, GlobalMaxPooling1D
+from tensorflow.keras.layers import Conv1D, MaxPooling1D, Embedding, Concatenate
+from tensorflow.keras.models import Model, Sequential
+from tensorflow.keras.models import load_model as load_keras_model
+from tensorflow.keras.initializers import Constant
 
 MAX_SEQUENCE_LENGTH = 200
 
@@ -83,9 +83,9 @@ def save_model(model, tokenizer, path):
         pkl.dump(tokenizer, f, protocol=pkl.HIGHEST_PROTOCOL)
 
 def load_model(path):
-    with open(path + "_tokenizer.pkl", "rb") as f:
+    with open("eitherio_tokenizer.pkl", "rb") as f:
         tokenizer = pkl.load(f)
-    return keras.models.load_model(path + "_model.h5"), tokenizer
+    return load_keras_model("eitherio_model.h5"), tokenizer
 
 if __name__ == "__main__":
     BASE_DIR = '/code'
