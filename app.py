@@ -2,9 +2,6 @@ import csv
 import streamlit as st
 from language_model import load_model, decide
 import time
-# Fix from https://discuss.streamlit.io/t/attributeerror-thread-local-object-has-no-attribute-value/574
-import keras.backend.tensorflow_backend as tb
-tb._SYMBOLIC_SCOPE.value = True
 
 model, tokenizer = load_model("./eitherio")
 
