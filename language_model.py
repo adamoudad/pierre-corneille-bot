@@ -85,7 +85,7 @@ def save_model(model, tokenizer, path):
 def load_model(path):
     with open("eitherio_tokenizer.pkl", "rb") as f:
         tokenizer = pkl.load(f)
-    return load_keras_model("eitherio_model.h5"), tokenizer
+    return load_keras_model(path + "_model.h5"), tokenizer
 
 if __name__ == "__main__":
     BASE_DIR = '/code'
